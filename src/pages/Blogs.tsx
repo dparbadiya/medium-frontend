@@ -16,7 +16,7 @@ export const Blogs = () => {
             </div>
         </div>
     }
-    console.log(blogs)
+   
 
     return <div>
         <Appbar />
