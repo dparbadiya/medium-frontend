@@ -1,4 +1,3 @@
-import { verify } from 'hono/jwt';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { BACKEND_URL } from '../config';
@@ -61,7 +60,7 @@ export const useBlog = ({ id }: { id: string }) => {
   };
 };
 
-export const useVerifyToken = async () => {
+export const useVerifyToken = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [auth, setAuth] = useState(false);
@@ -90,6 +89,7 @@ export const useVerifyToken = async () => {
           setLoading(false);
         })
         .catch((error) => {
+          console.log(error);
             navigate('/');
         })
     } else {
